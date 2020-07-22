@@ -12,7 +12,7 @@
           v-for="ad in myAds"
           :key="ad.id"
         >
-          <v-layout row>
+          <v-layout>
             <v-flex xs4>
               <v-img
               :src="ad.imgSrc"
@@ -22,7 +22,7 @@
             <v-flex xs8>
               <v-card-text>
                 <h2 class="mb-3">{{ ad.title }}</h2>
-                <p class="mb-0">{{ ad.description }}</p>
+                <p class="mb-0 overflow">{{ ad.description }}</p>
               </v-card-text>
               <v-card-actions class="justify-end pr-5">
                 <v-btn
@@ -73,3 +73,10 @@
     }
 	}
 </script>
+<style scoped>
+  .overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+</style>
